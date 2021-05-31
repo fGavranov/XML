@@ -1,0 +1,33 @@
+<?php
+$xml=new DomDocument("1.0","UTF-8");
+$xml->formatOutput=true;
+$xml->preserveWhiteSpace=false;
+$xml->load("Korisnici.xml");
+if(!$xml){
+    $Korisnici=$xml->createElement("Korisnici");
+    $xml->appendChild($Korisnici);
+}
+else{
+    $Korisnici=$xml->firstChild;
+}
+if(isset($_POST['submit']))
+{
+    $fname=$_POST['Ime'];
+    $fprezime=$_POST['Prezime'];
+    $femail=$_POST['Email'];
+    $fdob=$_POST['Dob'];
+
+ $Korisnik=$xml->createElement("Korisnik");
+ $Korisnici->appendChild($Korisnik);
+ $Ime=$xml->createElement("Ime",$fname);
+ $Korisnik->appendChild($Ime);
+ $Prezime=$xml->createElement("Prezime",$fprezime);
+ $Korisnik->appendChild($Prezime);
+ $Email=$xml->createElement("Email",$femail);
+ $Korisnik->appendChild($Email);
+ $Dob=$xml->createElement("Dob",$fdob);
+ $Korisnik->appendChild($Dob);
+echo"<xmp>".xml->saveXML()."</xmp>";
+$xml->save("Korisnici.xml")
+}
+?>

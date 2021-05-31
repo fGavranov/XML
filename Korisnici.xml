@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Korisnici>
+    <Korisnik>
+        <Ime>Ime</Ime>
+        <Prezime>Prezime</Prezime>
+        <Email>adresa@email.com</Email>
+        <Dob>27</Dob>
+    </Korisnik>
+</Korisnici>
